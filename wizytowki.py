@@ -54,3 +54,14 @@ cards = [Jakub, Jacek, Jan, Paweł, Andrzej]
 for obj in cards:
     print(obj)
 print("---")
+
+for card in sorted(cards, key=lambda card: card.imie):
+    print(card)
+print("---")
+
+for card in sorted(cards, key=lambda card: card.nazwisko):
+    print(card)
+print("---")
+
+for card in sorted(cards, key=lambda card: card.mail):
+    print(card)
