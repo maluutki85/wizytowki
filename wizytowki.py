@@ -48,3 +48,9 @@ Andrzej = Cards(
     stanowisko="Magazynier",
     mail="a.sobota@heat.pl",
 )
+cards = [Jakub, Jacek, Jan, Paweł, Andrzej]
+
+
+for obj in cards:
+    print(obj)
+print("---")
