@@ -56,6 +56,8 @@ if __name__ == "__main__":
         firma="Heating",
         stanowisko="Logistyk",
         mail="j.dziurgot@heating.pl",
+        telefon="123456789",
+        telefon1="987654321",
     )
     Jacek = Cards(
         imie="Jacek",
@@ -63,6 +65,8 @@ if __name__ == "__main__":
         firma="ACV",
         stanowisko="Kierownik",
         mail="j.nowak@acv.pl",
+        telefon="1122334455",
+        telefon1="5544332211",
     )
     Jan = Cards(
         imie="Jan",
@@ -70,6 +74,8 @@ if __name__ == "__main__":
         firma="AED",
         stanowisko="Prezes",
         mail="j.kowalski@aed.pl",
+        telefon="33445566",
+        telefon1="66554433",
     )
     Pawel = Cards(
         imie="Paweł",
@@ -77,6 +83,8 @@ if __name__ == "__main__":
         firma="RAZ",
         stanowisko="Sprzedawca",
         mail="p.adamczyk@raz.pl",
+        telefon="66778899",
+        telefon1="99887766",
     )
     Andrzej = Cards(
         imie="Andrzej",
@@ -84,6 +92,8 @@ if __name__ == "__main__":
         firma="Heat",
         stanowisko="Magazynier",
         mail="a.sobota@heat.pl",
+        telefon="34345443",
+        telefon1="94827352",
     )
     cards = [Jakub, Jacek, Jan, Pawel, Andrzej]
 
