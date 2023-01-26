@@ -10,42 +10,23 @@ class Cards:
         return f"{self.imie} {self.nazwisko} {self.mail}"
 
     def contact(self):
-        print(
-            f"Kontaktuję się z {self.imie} {self.nazwisko} {self.stanowisko} {self.mail}"
-        )
+        return f"Kontaktuję się z {self.imie} {self.nazwisko} {self.stanowisko} {self.mail}"
 
     @property
     def sum(self):
-        print(len(self.imie + " " + self.nazwisko))
+        return sum([len(self.imie), len(self.nazwisko), +1])
 
 
 class BaseContact(Cards):
-    def __init__(self, imie, nazwisko, telefon, mail):
-        self.imie = imie
-        self.nazwisko = nazwisko
+    def __init__(self, telefon, **kwargs):
+        super().__init__(telefon, **kwargs)
         self.telefon = telefon
-        self.mail = mail
-
-    def contact(self):
-        print(f"Wybieram numer {self.telefon} i dzownię do {self.imie}{self.nazwisko}")
-
-    @property
-    def sum(self):
-        print(len(self.imie + " " + self.nazwisko))
 
 
 class BusinessContact(Cards):
-    def __init__(self, stanowisko, firma, telefon1):
-        self.stanowisko = stanowisko
-        self.firma = firma
+    def __init__(self, telefon1, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.telefon1 = telefon1
-
-    def contact(self):
-        print(f"Wybieram numer {self.telefon1} i dzownię do {self.imie}{self.nazwisko}")
-
-    @property
-    def sum(self):
-        print(len(self.imie + " " + self.nazwisko))
 
 
 if __name__ == "__main__":
@@ -56,8 +37,8 @@ if __name__ == "__main__":
         firma="Heating",
         stanowisko="Logistyk",
         mail="j.dziurgot@heating.pl",
-        telefon="123456789",
-        telefon1="987654321",
+        telefon=321,
+        telefon1=123,
     )
     Jacek = Cards(
         imie="Jacek",
@@ -65,8 +46,7 @@ if __name__ == "__main__":
         firma="ACV",
         stanowisko="Kierownik",
         mail="j.nowak@acv.pl",
-        telefon="1122334455",
-        telefon1="5544332211",
+        telefon="123",
     )
     Jan = Cards(
         imie="Jan",
@@ -74,8 +54,7 @@ if __name__ == "__main__":
         firma="AED",
         stanowisko="Prezes",
         mail="j.kowalski@aed.pl",
-        telefon="33445566",
-        telefon1="66554433",
+        telefon="123",
     )
     Pawel = Cards(
         imie="Paweł",
@@ -83,8 +62,7 @@ if __name__ == "__main__":
         firma="RAZ",
         stanowisko="Sprzedawca",
         mail="p.adamczyk@raz.pl",
-        telefon="66778899",
-        telefon1="99887766",
+        telefon="123",
     )
     Andrzej = Cards(
         imie="Andrzej",
@@ -92,8 +70,7 @@ if __name__ == "__main__":
         firma="Heat",
         stanowisko="Magazynier",
         mail="a.sobota@heat.pl",
-        telefon="34345443",
-        telefon1="94827352",
+        telefon="123",
     )
     cards = [Jakub, Jacek, Jan, Pawel, Andrzej]
 
