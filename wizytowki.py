@@ -34,17 +34,18 @@ class BusinessContact(Cards):
     def contact(self):
         print(f"Wybieram {self.telefon1} i dzwonię do {self.imie} {self.nazwisko}")
 
+if __name__ == "__main__":
+    
+    def create_contacts(rodzaj, ilosc):
 
-def create_contacts(rodzaj, ilosc):
-
-    if rodzaj == "prywatna":
-        for i in range(ilosc):
-            card = f"{fake.first_name()} {fake.last_name()}, {fake.phone_number()}, {fake.email()}"
-            print(card)
-    elif rodzaj == "firmowa":
-        for i in range(ilosc):
-            card = f"{fake.first_name()} {fake.last_name()}, {fake.phone_number()}, {fake.email()}, {fake.job()},{fake.company()}"
-            print(card)
+        if rodzaj == "prywatna":
+            for i in range(ilosc):
+                card = f"{fake.first_name()} {fake.last_name()}, {fake.phone_number()}, {fake.email()}"
+                print(card)
+        elif rodzaj == "firmowa":
+            for i in range(ilosc):
+                card = f"{fake.first_name()} {fake.last_name()}, {fake.phone_number()}, {fake.email()}, {fake.job()},{fake.company()}"
+                print(card)
 
 
 create_contacts("firmowa", 10)
