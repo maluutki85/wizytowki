@@ -3,7 +3,7 @@ from faker import Faker
 fake = Faker("pl_PL")
 
 class BaseContact:
-    def __init__(self,imie,telefon,mail):
+    def __init__(self, imie, telefon, mail):
         self.imie = imie
         self.telefon = telefon
         self.mail = mail
@@ -17,8 +17,6 @@ class BaseContact:
 
     def __repr__(self):
         return f'{self.imie}, {self.telefon}, {self.mail}'
-
-
 class BusinessContact(BaseContact):
     def __init__(self, stanowisko, firma, telefon1, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -40,11 +38,10 @@ def create_contacts(rodzaj, ilosc):
             my_list.append(BaseContact(imie = fake.name(),telefon = fake.phone_number(),mail=fake.email()))
     elif rodzaj == "firmowa":
         for i in range (ilosc):
-            my_list.append(BusinessContact(imie = fake.name(),telefon = fake.phone_number(),mail=fake.email(),stanowisko=fake.job(),firma = fake.company(), telefon1 = fake.phone_number()))
-    print(my_list)
+            my_list.append(BusinessContact(imie = fake.name(), telefon = fake.phone_number(), mail=fake.email(), stanowisko=fake.job(), firma = fake.company(), telefon1 = fake.phone_number()))
+    return my_list
 
 if __name__ == "__main__":
-  
-  create_contacts("prywatna",5)
-  print("---")
-  create_contacts("firmowa",5)
+
+    my_list= create_contacts("prywatna",5)
+    print(my_list)
