@@ -35,19 +35,16 @@ class BusinessContact(Cards):
         print(f"Wybieram {self.telefon1} i dzwonię do {self.imie} {self.nazwisko}")
 
 
-# funkcja create_contacts
+def create_contacts(rodzaj, ilosc):
 
-if __name__ == "__main__":
-
-    rodzaj_wizytowki = int(
-        input("Jaki rodzaj wizytówki chcesz utworzyć? 1 - prywatna, 2 - firmowa: ")
-    )
-    ilosc_wizytowki = int(input("Ile wizytówek chcesz utworzyć?"))
-
-    for i in range(ilosc_wizytowki):
-        if rodzaj_wizytowki == 1:
+    if rodzaj == "prywatna":
+        for i in range(ilosc):
             card = f"{fake.first_name()} {fake.last_name()}, {fake.phone_number()}, {fake.email()}"
             print(card)
-        elif rodzaj_wizytowki == 2:
+    elif rodzaj == "firmowa":
+        for i in range(ilosc):
             card = f"{fake.first_name()} {fake.last_name()}, {fake.phone_number()}, {fake.email()}, {fake.job()},{fake.company()}"
             print(card)
+
+
+create_contacts("firmowa", 10)
